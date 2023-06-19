@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+
+
+<style>
+	
+
+.active {
+  background-color: #4CAF50;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 18px 18px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 12px;}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176338996-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-176338996-1');
+</script>
+
+
+
+<script>
+function check_password(){
+var pswd =document.myForm.pswd.value;
+var reg=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+if(!reg.test(pswd)){
+   alert(" Password must have Minimum eight characters, at least one letter and one number.Please enter again! ");
+   document.myForm.pswd.focus();
+   return false;
+   }
+}
+ function check_Alpha1(letters1){
+    var reg1 = /^[a-zA-Z]+$/;
+    if(reg1.test(letters1.Fname.value) == false){
+   alert("Name must be in alphabets only");
+   letters1.Fname.focus();
+   return false;
+    }}
+	 function check_Alpha2(letters2){
+    var reg2= /^[a-zA-Z]+$/;
+    if(reg2.test(letters2.Lname.value) == false){
+   alert("Name must be in alphabets only");
+   letters2.Lname.focus();
+   return false;
+    }}
+ function check_Alpha3(letters3){
+    var reg3= /^[a-zA-Z]+$/;
+    if(reg3.test(letters3.city.value) == false){
+   alert("City must be in alphabets only");
+   letters3.city.focus();
+   return false;
+    }}
+     function check_Alpha4(letters4){
+    var reg4= /^[a-zA-Z]+$/;
+    if(reg4.test(letters4.state.value) == false){
+   alert("State must be in alphabets only");
+   letters4.state.focus();
+   return false;
+    }
+}
+function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(mailformat.test(inputText.Email.value) == false){
+   alert("You have entered an invalid email.");
+   inputText.Email.focus();
+   return false;
+    }
+}
+function ValidatePAN(inp) {      
+     
+  var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;    
+  if(regex.test(inp.pan.value) == false){      
+    
+  alert("invalid PAN Number"); 
+  inp.pan.focus();
+   
+  return false;    
+  }   
+  } 
+
+function validateForm() {
+  var x = document.myForm.Fname.value;
+  if (x == "") {
+    alert("First Name must be filled out");
+    return false;
+  }
+      
+  
+  var y = document.forms["myForm"]["Lname"].value;
+  if (y == "") {
+    alert("Last Name must be filled out");
+    return false;
+	}
+	var z = document.forms["myForm"]["Email"].value;
+  if (z == "") {
+    alert("Email must be filled out");
+    return false;
+	}
+	var a = document.forms["myForm"]["pswd"].value;
+  if (a == "") {
+    alert("Password must be filled out");
+    return false;
+	}
+	var b = document.forms["myForm"]["cpswd"].value;
+  if (b == "") {
+    alert("This must be filled out");
+    return false;
+	}
+	if (a!=b)
+	{
+	alert("The passwords are not matching . Please enter again!");
+	return false;
+	}
+	  var c = document.forms["myForm"]["mobile"].value;
+  if (c == "") {
+    alert("Phone no must be filled out");
+    return false;
+	}
+	var d = document.myForm.pan.value;
+  if (d == "") {
+    alert("PAN  must be filled out");
+    return false;
+  }
+ 
+	
+	}
+	function Validation(inp1)
+{
+
+
+var regex =/^\d{10}$/;    
+if(regex.test(inp1.mobile.value) == false){      
+  
+alert("Invalid Mobile Number"); 
+inp1.mobile.focus();
+ 
+return false;    
+}   
+
+
+	
+}
+/*
+function showInput() {
+  
+
+		var myWindow = window.open("", "Newwin",'toolbar=no,status=no,width=300,height=300');	
+		myWindow.document.write("Your Details:"+"<br>");
+        myWindow.document.write("First Name: "+myForm.Fname.value+"<br>");	
+		myWindow.document.write("Last Name: "+myForm.Lname.value+"<br>");
+		myWindow.document.write("Email id: "+myForm.Email.value+"<br>");
+        myWindow.document.write("Date of Birth: "+myForm.bday.value+"<br>");
+        myWindow.document.write("Mobile Number: "+myForm.mobile.value+"<br>");
+					
+    }
+    */
+	function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+  
+}
+function mouseOut() {
+  
+  document.getElementById("demo").style.color = "blue"
+}
+ 
+	/*function namef(){
+alert("Name must contain alphabets only");
+}
+function passf(){
+alert("Password must be minimum 8 characters , at least one letter and one number:");
+}*/
+/*
+function pageload()
+		{
+			alert(" Page Loaded Successfully")
+		}
+    */
+	
+</script>
+</head>
+
+<body  style="background-image:linear-gradient(#00FFFF,#87CEFA)" >
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">CREDIT KNIGHT</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="home1.jsp">Home</a></li>
+       <li class="" ><a href="AboutUs.html">About Us</a></li>
+      <li class="disabled" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Features<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+          <li class="" id="info"><a href="">Credit Score</a></li>
+          
+        </ul>
+      </li>
+   
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="register.html"><span class="glyphicon glyphicon-user" ></span> Sign Up</a></li>
+      <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<center>
+
+<h1 style="color:purple"> Welcome!</h1> </center>
+<br>
+
+<center> <img  src="register.jpg" width="560px" height="330px" > </center>
+
+
+
+<br>
+<center>
+	 </form>
+	  <div class="container"> 
+		 <br> 
+		 <h1 class="text-center"> <a href=""> Credit Knight</a></h1>
+		 <hr>
+     		<div class="card bg-light">
+				<article class="card-body mx-auto" style="max-width: 400px;">
+					<h4 class="card-title mt-3 text-center">Create Account</h4>
+					<p class="text-center">Get started with your free account</p>
+					<p>
+						 <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in </a>
+					</p>
+					
+					
+					
+				 <form  name="myForm" action="reg_db.jsp" method="GET"
+				   onsubmit="validateForm(),check_Alpha1(this),check_Alpha2(this),Validation(this),check_password(),ValidateEmail(this),ValidatePAN(this),showInput()" >
+
+<div onmouseover="namef()" >
+
+
+					<div class="form-group input-group"><!-- form-group// -->
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+						</div>
+								<input name="Fname" class="form-control" placeholder="First-name" type="text" required>
+					</div> 
+					<div class="form-group input-group"><!-- form-group// -->
+						<div class="input-group-prepend">
+							<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+						</div>
+								<input name="Lname" class="form-control" placeholder="Last-name" type="text" required>
+					</div> 
+					<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+								</div>
+						      		<input name="pan" class="form-control" placeholder="PAN" type="text" required>
+							</div>
+					
+					<div class="form-group input-group">
+						<div class="input-group-prepend">
+								<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+						</div>
+					            <input name="Email" class="form-control" placeholder="Email address" type="text" required>
+					</div> 
+					
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+								</div>
+						      		<input name="mobile" class="form-control" placeholder="Phone number" type="text" required>
+							</div>
+							
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+								</div>
+						      		<input type="date" name="bday" id="user_input3">
+						      			</div>
+							 <!-- form-group// -->
+							 <!-- form-group end.// -->
+							<div onmouseover="passf()">
+							<div class="form-group input-group">
+									<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+								</div>
+								<input name="pswd" class="form-control" placeholder="Create password" type="password" required>
+							</div> </div>
+							<!-- form-group// -->
+							<div class="form-group input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+								</div>
+								<input name="cpswd" class="form-control" placeholder="Confirm password" type="password" required>
+							</div> <!-- form-group// --> 
+							<br><br><br>
+  <input type="checkbox" id="terms" name="terms" value="accept" required>
+  <label for="terms"><strong>I accept all the terms and conditions .</strong></label><br>
+
+
+
+<br><br>                                     
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary btn-block button button1" onmouseover="mouseOver()" onmouseout="mouseOut()" id="demo" value="submit"> Create Account  </button>
+							</div> <!-- form-group// -->      
+							<p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+				  </form>
+				</article>
+						</div> <!-- card.// -->
+
+						</div> 
+						<!--container end.//-->
+
+						<br><br>
+						<article class="bg-secondary mb-3">  
+						<div class="card-body text-center">
+							
+									<p><a class="btn btn-warning" target="_blank" href=""> Credit Knight.com  
+									 <i class="fa fa-window-restore "></i></a></p>
+						</div>
+	 
+</center>     
+    
+     <script type="text/javascript">
+        
+  function myFunction() {
+  document.getElementById("innerHTM").innerHTML = "Thank You . Keep Visiting us.";
+  
+}  
+
+</script>
+
+</body> 
+</html>
+

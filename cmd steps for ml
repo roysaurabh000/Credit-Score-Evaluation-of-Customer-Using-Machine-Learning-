@@ -1,0 +1,13 @@
+C:\Users\roysa\ml--->folder location
+
+
+pip install virtualenv
+virtualenv ml
+ml\Scripts\activate
+cd ml
+pip install sklearn
+pip install pandas
+pip install flask
+pip install scikit-learn
+pip install -U scikit-learn scipy matplotlib
+ python app.py
